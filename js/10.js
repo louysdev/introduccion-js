@@ -16,6 +16,4 @@ producto.imagen = "imagen.jpg"
 
 // Eliminar propiedades
 delete producto.imagen
-
-
 console.log(producto)
