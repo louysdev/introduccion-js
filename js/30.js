@@ -1,6 +1,6 @@
 // Async / await
 
-function descargarClientes () {
+function descargarNuevosClientes () {
     return new Promise(resolve => {
         console.log("Descargando clientes... espere...")
 
@@ -10,10 +10,26 @@ function descargarClientes () {
     })
 }
 
+function descargarUltimosPedidos () {
+    return new Promise(resolve => {
+        console.log("Descargando pedidos... espere...")
+
+        setTimeout(() => {
+            resolve("Los pedidos fueron descargados")
+        }, 3000)
+    })
+}
+
 async function app() {
     try {
-        const resultado = await descargarClientes(); // Hasta que esa funcion no termine sus proceso no continua con el codigo siguiente del bloque
-        console.log(resultado)
+        // const clientes = await descargarNuevosClientes(); // Hasta que esa funcion no termine sus proceso no continua con el codigo siguiente del bloque
+        // const pedidos = await descargarUltimosPedidos();
+        // console.log(clientes)
+        // console.log(pedidos)
+
+        const resultado = await Promise.all([ descargarNuevosClientes(), descargarUltimosPedidos() ]) // Forma de ejectuar dos async await a la vez
+        console.log(resultado [0])
+        console.log(resultado [1])
     } catch (error) {
         console.log(error)
     } 
