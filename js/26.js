@@ -26,7 +26,7 @@ class Libro extends Producto{ //Usa los elementos de la clase padre
         super(nombre, precio); //Llama las propiedades del constructor padre
         this.isbn = isbn
     }
-
+    
     formatearProducto() {
         return `${super.formatearProducto()} | ISBN: ${this.isbn}`;
     }
