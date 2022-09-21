@@ -1,4 +1,4 @@
-
+// Notification API
 const boton = document.querySelector("#boton"); // Asignar codigo JS a un elemento En HTML. document hace referencia a todo el HTML
 
 // Esta funcion le pide al usuario que acepte los permise de notificacoin
